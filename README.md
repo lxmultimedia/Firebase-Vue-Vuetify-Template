@@ -21,7 +21,7 @@ npm run lint
 ```
 
 ### .env
-...
+```
 VUE_APP_NAME="ToDo App"
 
 VUE_APP_FIREBASE_USER="your firebase auth email"
