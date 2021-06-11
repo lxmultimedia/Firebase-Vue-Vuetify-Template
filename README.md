@@ -9,7 +9,7 @@ Required:
 >> Firebase project with realtime database
 
 Authentication:
->> static authentication with email/password (has to be activated in firebase project)
+>> static authentication with email/password (has to be enabled in firebase project)
 
 
 ## Project setup
