@@ -20,12 +20,14 @@ export default {
   components: { ToDoList },
   name: "App",
   data: () => ({
+    username: process.env.VUE_APP_FIREBASE_USER,
+    password: process.env.VUE_APP_FIREBASE_PW,
     appName: process.env.VUE_APP_NAME,
   }),
-  mounted() {
+  created() {
     firebase
       .auth()
-      .signInWithEmailAndPassword(process.env.VUE_APP_FIREBASE_USER, process.env.VUE_APP_FIREBASE_PW)
+      .signInWithEmailAndPassword(this.username, this.password)
       .then(() => {
         console.log("login ok");
       })
