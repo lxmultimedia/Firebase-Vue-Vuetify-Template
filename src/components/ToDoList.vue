@@ -48,7 +48,11 @@ export default {
     return {
       ToDos: {},
       newItem: "",
+      loggedin: false
     };
+  },
+  props: {
+    status
   },
   methods: {
     async addItem() {
@@ -63,10 +67,14 @@ export default {
         .delete();
     },
   },
-  firestore: {
-    ToDos: db.collection("ToDos"),
-  },
-};
+  watch: { 
+    status: function(newVal) {
+      if(newVal == true) {
+        this.$bind("ToDos", db.collection("ToDos"));
+      }
+    }
+  }
+}
 </script>
 
 <style scoped></style>

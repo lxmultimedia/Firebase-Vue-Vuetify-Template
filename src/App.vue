@@ -8,7 +8,7 @@
       <v-spacer></v-spacer>
     </v-app-bar>
 
-    <v-main><to-do-list></to-do-list> </v-main>
+    <v-main><to-do-list :status="loggedIn"></to-do-list> </v-main>
   </v-app>
 </template>
 
@@ -20,6 +20,7 @@ export default {
   components: { ToDoList },
   name: "App",
   data: () => ({
+    loggedIn: false,
     username: process.env.VUE_APP_FIREBASE_USER,
     password: process.env.VUE_APP_FIREBASE_PW,
     appName: process.env.VUE_APP_NAME,
@@ -29,6 +30,7 @@ export default {
       .auth()
       .signInWithEmailAndPassword(this.username, this.password)
       .then(() => {
+        this.loggedIn = true;
         console.log("login ok");
       })
       .catch(err => {
