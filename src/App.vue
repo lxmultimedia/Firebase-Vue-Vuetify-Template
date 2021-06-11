@@ -22,7 +22,7 @@ export default {
   data: () => ({
     appName: process.env.VUE_APP_NAME,
   }),
-  created() {
+  mounted() {
     firebase
       .auth()
       .signInWithEmailAndPassword(process.env.VUE_APP_FIREBASE_USER, process.env.VUE_APP_FIREBASE_PW)
