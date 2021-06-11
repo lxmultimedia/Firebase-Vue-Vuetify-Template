@@ -26,6 +26,11 @@ VUE_APP_NAME="ToDo App"
 
 VUE_APP_FIREBASE_USER="your firebase auth email"
 VUE_APP_FIREBASE_PW="your password"
+```
+
+
+
+
 
 
 ### Customize configuration
