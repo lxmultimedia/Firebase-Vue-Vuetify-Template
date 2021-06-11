@@ -13,7 +13,8 @@
 </template>
 
 <script>
-import firebase from "firebase";
+import firebase from "firebase/app"
+import "firebase/auth";
 import ToDoList from "./components/ToDoList.vue";
 export default {
   components: { ToDoList },
