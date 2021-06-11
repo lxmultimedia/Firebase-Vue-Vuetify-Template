@@ -1,8 +1,23 @@
-# firebase-template
+# Firebase-Vue-Vuetify-Template
+## Simple ToDo App
+
+
+![alt text](https://www.lxmcloud.tk/git/todo.png)
+
+
+Required:
+.. Firebase project with realtime database
+
+Authentication:
+.. static authentication with email/password (has to be activated in firebase project)
+
 
 ## Project setup
 ```
 npm install
+
+- add firebasse settings in /src/firebase/config.js
+- add details in .env
 ```
 
 ### Compiles and hot-reloads for development
@@ -35,5 +50,5 @@ VUE_APP_FIREBASE_PW="your password"
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-# Firebase-Vue-Vuetify-Template
+
 
