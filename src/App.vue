@@ -2,7 +2,7 @@
   <v-app>
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
-        <h2>LX ToDo</h2>
+        <h2>{{ appName }}</h2>
       </div>
 
       <v-spacer></v-spacer>
@@ -13,12 +13,24 @@
 </template>
 
 <script>
+import firebase from "firebase";
 import ToDoList from "./components/ToDoList.vue";
 export default {
   components: { ToDoList },
   name: "App",
   data: () => ({
-    //
+    appName: process.env.VUE_APP_NAME,
   }),
+  created() {
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(process.env.VUE_APP_FIREBASE_USER, process.env.VUE_APP_FIREBASE_PW)
+      .then(() => {
+        console.log("login ok");
+      })
+      .catch(err => {
+        console.log(err.message);
+      });    
+  }
 };
 </script>
