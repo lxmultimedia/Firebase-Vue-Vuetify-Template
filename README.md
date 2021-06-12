@@ -46,8 +46,18 @@ VUE_APP_FIREBASE_USER="your firebase auth email"
 VUE_APP_FIREBASE_PW="your password"
 ```
 
+### .htaccess
+```
+# Disable Directory listing
+Options -Indexes
 
- 
+# block files which needs to be hidden, specify .example extension of the file
+<Files ~ "\.(env|json|config.js|md|gitignore|gitattributes|lock)$">
+    Order allow,deny
+    Deny from all
+</Files>
+
+ ```
 
 
 
