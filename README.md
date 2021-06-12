@@ -6,7 +6,7 @@
 
 
 Required:
->> Firebase project with realtime database
+>> Firebase project with firestore database
 
 Authentication:
 >> static authentication with email/password (has to be enabled in firebase project)
