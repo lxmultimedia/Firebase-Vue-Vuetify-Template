@@ -38,7 +38,8 @@ npm run build
 npm run lint
 ```
 
-### .env (has to created in root directory)
+### .env 
+(has to created in root directory)
 ```
 VUE_APP_NAME="ToDo App"
 
