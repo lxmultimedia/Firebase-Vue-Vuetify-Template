@@ -18,6 +18,7 @@ npm install
 
 - add firebasse settings in /src/firebase/config.js
 - add details in .env
+
 ```
 
 ### Compiles and hot-reloads for development
@@ -28,6 +29,8 @@ npm run serve
 ### Compiles and minifies for production
 ```
 npm run build
+
+- copy /dist folder to webserver
 ```
 
 ### Lints and fixes files
@@ -35,7 +38,7 @@ npm run build
 npm run lint
 ```
 
-### .env
+### .env (has to created in root directory)
 ```
 VUE_APP_NAME="ToDo App"
 
