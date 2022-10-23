@@ -23,13 +23,14 @@
             :key="ToDo.id"
           >
             <v-row>
-              <v-col cols="10" sm="10" md="11">
+              <v-col cols="8" sm="8" md="10">
                 <v-list-item-title class="text-wrap headline">{{
                   ToDo.name
                 }}</v-list-item-title>
               </v-col>
-              <v-col cols="2" sm="2" md="1" class="text-right"
-                ><v-btn icon color="red" @click="deleteToDo(ToDo.id)"
+              <v-col cols="4" sm="4" md="2" class="text-right"
+                ><div>{{ ToDo.createdAt.toDate().toLocaleDateString() }}</div>
+                <v-btn icon color="red" @click="deleteToDo(ToDo.id)"
                   ><v-icon>mdi-delete</v-icon></v-btn
                 ></v-col
               >
@@ -42,6 +43,7 @@
 </template>
 
 <script>
+import firebase from 'firebase/app';
 import { db } from "../firebase/db";
 export default {
   data() {
@@ -56,8 +58,10 @@ export default {
   },
   methods: {
     async addItem() {
+      const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+
       if (this.newItem) {
-        await db.collection("ToDos").add({ name: this.newItem });
+        await db.collection("ToDos").add({ name: this.newItem, createdAt: timestamp() });
         this.newItem = "";
       }
     },
@@ -70,7 +74,7 @@ export default {
   watch: { 
     status: function(newVal) {
       if(newVal == true) {
-        this.$bind("ToDos", db.collection("ToDos"));
+        this.$bind("ToDos", db.collection("ToDos").orderBy("createdAt").orderBy("name"));
       }
     }
   }
