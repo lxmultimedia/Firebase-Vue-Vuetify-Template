@@ -2,7 +2,7 @@
 ## Simple ToDo App
 
 
-![alt text](https://www.lxmcloud.tk/git/todo2.png)
+![alt text](https://cloud.ozona.ch/git/todo2.png)
 
 
 Required:
