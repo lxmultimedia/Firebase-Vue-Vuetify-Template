@@ -2,7 +2,7 @@
 ## Simple ToDo App
 
 
-![alt text](https://cloud.ozona.ch/git/todo2.png)
+![alt text](https://cloud.ozona.ch/giti/todo2.png)
 
 
 Required:
